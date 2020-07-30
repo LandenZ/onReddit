@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1dW-xD-m3n">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="jfo-ne-HvS">
+            <objects>
+                <navigationController id="1dW-xD-m3n" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kzK-oX-oUc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="zg1-d6-e11" kind="relationship" relationship="rootViewController" id="1Q2-nQ-KaN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x40-aR-RZV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-423" y="115"/>
+        </scene>
+        <!--On Reddit-->
+        <scene sceneID="TDK-nG-uo8">
+            <objects>
+                <viewController id="zg1-d6-e11" customClass="RedditTableViewController" customModule="On_Reddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zka-st-0sq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ICc-rF-7eO">
+                                <rect key="frame" x="0.0" y="132" width="414" height="730"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="bvi-yu-fD3" detailTextLabel="XLg-r6-igg" style="IBUITableViewCellStyleSubtitle" id="LaQ-Me-BGe">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LaQ-Me-BGe" id="qwb-R5-3tX">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bvi-yu-fD3">
+                                                    <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XLg-r6-igg">
+                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="zg1-d6-e11" id="7HM-Rw-HBL"/>
+                                    <outlet property="delegate" destination="zg1-d6-e11" id="N3Q-ca-IBA"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="search for subreddits" translatesAutoresizingMaskIntoConstraints="NO" id="bSk-Og-Lqr">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="gdR-cn-Qhe"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="zg1-d6-e11" id="yQr-LY-fDn"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bSk-Og-Lqr" firstAttribute="leading" secondItem="rgV-o6-Gbg" secondAttribute="leading" id="65C-iB-38J"/>
+                            <constraint firstItem="ICc-rF-7eO" firstAttribute="leading" secondItem="rgV-o6-Gbg" secondAttribute="leading" id="KKR-ep-2qc"/>
+                            <constraint firstItem="rgV-o6-Gbg" firstAttribute="bottom" secondItem="ICc-rF-7eO" secondAttribute="bottom" id="NvG-X5-Jwq"/>
+                            <constraint firstItem="bSk-Og-Lqr" firstAttribute="top" secondItem="rgV-o6-Gbg" secondAttribute="top" id="OMl-0b-mBy"/>
+                            <constraint firstItem="ICc-rF-7eO" firstAttribute="top" secondItem="bSk-Og-Lqr" secondAttribute="bottom" id="Rdx-ZQ-3Ka"/>
+                            <constraint firstItem="rgV-o6-Gbg" firstAttribute="trailing" secondItem="ICc-rF-7eO" secondAttribute="trailing" id="m9I-Nk-ByL"/>
+                            <constraint firstItem="bSk-Og-Lqr" firstAttribute="trailing" secondItem="rgV-o6-Gbg" secondAttribute="trailing" id="thv-Os-zVz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rgV-o6-Gbg"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="On Reddit" id="2bS-xl-bnT"/>
+                    <connections>
+                        <outlet property="searchBar" destination="bSk-Og-Lqr" id="aeQ-W7-jBh"/>
+                        <outlet property="tableView" destination="ICc-rF-7eO" id="HRj-EI-bEJ"/>
+                        <segue destination="mcM-X9-Vo8" kind="show" identifier="showRedditDetailView" id="Dcx-sc-nrg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DDr-xs-W4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="508.69565217391306" y="115.84821428571428"/>
+        </scene>
+        <!--Reddit Detail View Controller-->
+        <scene sceneID="ogN-VQ-IFJ">
+            <objects>
+                <viewController id="mcM-X9-Vo8" customClass="RedditDetailViewController" customModule="On_Reddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4iB-ig-P3J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D3P-uz-slp">
+                                <rect key="frame" x="0.0" y="90" width="414" height="772"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L5S-6s-8up">
+                                <rect key="frame" x="0.0" y="88" width="414" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="QeI-4E-k54"/>
+                                </constraints>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="D3P-uz-slp" firstAttribute="leading" secondItem="Cbr-Ha-bdA" secondAttribute="leading" id="7La-i1-jd3"/>
+                            <constraint firstItem="L5S-6s-8up" firstAttribute="top" secondItem="Cbr-Ha-bdA" secondAttribute="top" id="BZW-SL-iYQ"/>
+                            <constraint firstItem="Cbr-Ha-bdA" firstAttribute="trailing" secondItem="D3P-uz-slp" secondAttribute="trailing" id="C28-it-EZS"/>
+                            <constraint firstItem="Cbr-Ha-bdA" firstAttribute="bottom" secondItem="D3P-uz-slp" secondAttribute="bottom" id="EQD-69-p7p"/>
+                            <constraint firstItem="D3P-uz-slp" firstAttribute="top" secondItem="L5S-6s-8up" secondAttribute="bottom" id="PIU-sA-RwN"/>
+                            <constraint firstAttribute="trailing" secondItem="L5S-6s-8up" secondAttribute="trailing" id="Pcr-fr-Fzm"/>
+                            <constraint firstItem="L5S-6s-8up" firstAttribute="leading" secondItem="4iB-ig-P3J" secondAttribute="leading" id="ygz-8Y-hyP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cbr-Ha-bdA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ip5-9a-rfu">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="1Dk-Nb-oKd">
+                            <connections>
+                                <action selector="reloadWebView:" destination="mcM-X9-Vo8" id="LxY-jq-rYG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="progressView" destination="L5S-6s-8up" id="3Hp-9c-Cu5"/>
+                        <outlet property="webView" destination="D3P-uz-slp" id="TTb-6k-NFN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="byI-hC-B2T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1250.7246376811595" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+</document>
